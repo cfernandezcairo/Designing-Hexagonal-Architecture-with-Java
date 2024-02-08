@@ -5,8 +5,8 @@ import dev.davivieira.topologyinventory.domain.entity.EdgeRouter;
 import dev.davivieira.topologyinventory.domain.entity.Router;
 import dev.davivieira.topologyinventory.domain.entity.Switch;
 import dev.davivieira.topologyinventory.domain.exception.GenericSpecificationException;
-import dev.davivieira.topologyinventory.domain.service.RouterService;
 import dev.davivieira.topologyinventory.domain.service.NetworkService;
+import dev.davivieira.topologyinventory.domain.service.RouterService;
 import dev.davivieira.topologyinventory.domain.service.SwitchService;
 import dev.davivieira.topologyinventory.domain.vo.*;
 import org.junit.jupiter.api.Test;
@@ -16,10 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class DomainTest {
