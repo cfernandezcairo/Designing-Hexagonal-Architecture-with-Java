@@ -37,7 +37,7 @@ public class RouterNetworkRestAdapter extends RouterManageNetworkAdapter {
                     exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
                     if(exchange.getRequestURI().getPath().equals("/network/add")) {
                         try {
-                            router = this.addNetworkToRouter(params);
+                            router = this.addNetworkToRouter(params, true);
                         } catch (Exception e){
                             exchange.sendResponseHeaders(400, e.getMessage().getBytes().length);
                             OutputStream output = exchange.getResponseBody();

@@ -1,6 +1,6 @@
 package dev.davivieira.framework.adapters.input.stdin;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.davivieira.application.usecases.RouterNetworkUseCase;
 import dev.davivieira.domain.entity.Router;
@@ -20,12 +20,12 @@ public class RouterNetworkCLIAdapter extends RouterManageNetworkAdapter {
     @Override
     public Router processRequest(Object requestParams){
         var params = stdinParams(requestParams);
-        router = this.addNetworkToRouter(params);
+        router = this.addNetworkToRouter(params, false);
         ObjectMapper mapper = new ObjectMapper();
         try {
             var routerJson = mapper.writeValueAsString(RouterJsonFileMapper.toJson(router));
             System.out.println(routerJson);
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

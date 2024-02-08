@@ -6,7 +6,7 @@ import dev.davivieira.domain.vo.RouterId;
 
 public interface RouterNetworkUseCase {
 
-    Router addNetworkToRouter(RouterId routerId, Network network);
+    Router addNetworkToRouter(RouterId routerId, Network network, Boolean notify);
 
     Router getRouter(RouterId routerId);
 }

@@ -12,12 +12,12 @@ public abstract class RouterManageNetworkAdapter {
     protected Router router;
     protected RouterNetworkUseCase routerNetworkUseCase;
 
-    public Router addNetworkToRouter(Map<String, String> params){
+    public Router addNetworkToRouter(Map<String, String> params, Boolean notify){
         var routerId = RouterId.withId(params.get("routerId"));
         var network = new Network(IP.fromAddress(params.get("address")),
                 params.get("name"),
                 Integer.valueOf(params.get("cidr")));
-        return routerNetworkUseCase.addNetworkToRouter(routerId, network);
+        return routerNetworkUseCase.addNetworkToRouter(routerId, network, notify);
     }
 
     public Router getRouter(Map<String, String> params) {

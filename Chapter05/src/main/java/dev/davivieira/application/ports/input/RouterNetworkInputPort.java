@@ -25,9 +25,9 @@ public class RouterNetworkInputPort implements RouterNetworkUseCase {
     }
 
     @Override
-    public Router addNetworkToRouter(RouterId routerId, Network network) {
+    public Router addNetworkToRouter(RouterId routerId, Network network, Boolean notify) {
         var router = fetchRouter(routerId);
-        notifyEventOutputPort.sendEvent("Adding "+network.getName()+" network to router "+router.getId().getUUID());
+        if(notify) notifyEventOutputPort.sendEvent("Adding "+network.getName()+" network to router "+router.getId().getUUID());
         return createNetwork(router, network);
     }
 
