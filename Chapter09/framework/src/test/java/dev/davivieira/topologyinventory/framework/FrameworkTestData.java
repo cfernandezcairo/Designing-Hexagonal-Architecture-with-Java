@@ -61,7 +61,7 @@ public class FrameworkTestData {
         ServiceLoader<SwitchManagementOutputPort> loaderOutputSwitch = ServiceLoader.load(SwitchManagementOutputPort.class);
         SwitchManagementOutputPort switchManagementOutputPort = loaderOutputSwitch.findFirst().get();
 
-        // Load switch implementations
+        // Load network implementations
         ServiceLoader<NetworkManagementUseCase> loaderUseCaseNetwork = ServiceLoader.load(NetworkManagementUseCase.class);
         NetworkManagementUseCase networkManagementUseCase = loaderUseCaseNetwork.findFirst().get();
 
