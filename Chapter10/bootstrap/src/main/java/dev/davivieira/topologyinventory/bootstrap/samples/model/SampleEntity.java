@@ -1,18 +1,10 @@
-package dev.davivieira.topologyinventory.bootstrap.samples;
+package dev.davivieira.topologyinventory.bootstrap.samples.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.QueryHint;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
-@ApplicationScoped
+@Table(name = "sample_entity")
 @NamedQuery(name = "SampleEntity.findAll",
         query = "SELECT f FROM SampleEntity f ORDER BY f.field",
         hints = @QueryHint(name = "org.hibernate.cacheable", value = "true") )
@@ -26,5 +18,6 @@ public class SampleEntity {
     private String field;
     @Getter
     @Setter
+    @Column(name="`value`")
     private int value;
 }

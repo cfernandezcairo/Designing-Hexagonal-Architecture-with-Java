@@ -1,15 +1,18 @@
-package dev.davivieira.topologyinventory.bootstrap.samples;
+package dev.davivieira.topologyinventory.bootstrap.samples.Service;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
+
+import dev.davivieira.topologyinventory.bootstrap.samples.dto.SampleObject;
+import dev.davivieira.topologyinventory.bootstrap.samples.model.SampleEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
-@ApplicationScoped
+@Service
 public class PersistenceExample {
 
-    @Inject
+    @Autowired
     EntityManager em;
 
     @Transactional

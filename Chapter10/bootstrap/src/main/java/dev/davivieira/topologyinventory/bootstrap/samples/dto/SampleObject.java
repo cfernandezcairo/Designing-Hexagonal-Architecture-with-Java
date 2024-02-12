@@ -1,7 +1,8 @@
-package dev.davivieira.topologyinventory.bootstrap.samples;
+package dev.davivieira.topologyinventory.bootstrap.samples.dto;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+
 
 public class SampleObject {
     @NotBlank(message = "The field cannot be empty")
